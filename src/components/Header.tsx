@@ -1,15 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 
 export interface IAppProps {
-    name: string;
-    className?: string
+  name: string;
+  className?: string;
 }
 
-export default function Header (props: IAppProps) {
-  return (
-    <div className={props.className}>
-      {props.name}
-    </div>
-  );
+export default function Header(props: IAppProps) {
+  return <div className={props.className}>{props.name}</div>;
 }
-
