@@ -21,7 +21,7 @@ export default function About(props: IAppProps): JSX.Element {
           </div>
         </div>
       ) : (
-        <div>321</div>
+        <div></div>
       )}
     </CardWrapper>
   );
