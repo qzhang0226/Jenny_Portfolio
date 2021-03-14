@@ -1,0 +1,59 @@
+:root{
+  --mainDark: #000000;
+  --mainWhite: #fff;
+  --mainBlue: #E3F2F3;
+}
+
+body{
+  background: var(--mainWhite);
+  font-family: 'Cardo', serif;
+}
+
+a{
+  color: var(--mainDark);
+}
+
+a:hover{
+  color: var(--mainDark);
+  text-decoration: none;
+}
+
+.container{
+  text-align: center;
+}
+
+.loader:empty {
+  width: 4em;
+  height: 4em;
+  margin: 100px auto;
+  border: .5em solid #f3f3f3;
+  border-left: .5em solid black;
+  border-radius: 50%;
+  animation: spin 1.1s infinite linear;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.content {
+  height: auto;
+  min-height: calc(100vh - 180px);
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+figcaption {
+  color: rgba(0,0,0,0.54);
+  text-align: center;
+  font-size: 0.8em;
+  padding-top: 1rem;
+}
+
+code {
+  background: darkgray;
+  color: rgba(0,0,0,1)
+}
