@@ -10,10 +10,11 @@ import { StoreProvider } from "./Store";
 import Home from "./components/Home";
 // import ProjectDetails from './components/ProjectDetails';
 import AllBlogs from "./components/Blog/AllBlogs";
-import BlogDetails from "./components/Blog/BlogDetails";
+// import BlogDetails from "./components/Blog/BlogDetails";
 import { ScrollIcon } from "./components/ScrollIcon";
 import Footer from "./components/Footer";
 import MyNavBar from "./components/MyNavBar";
+import ContactPage from "./components/ContactPage";
 
 ReactDOM.render(
   <StoreProvider>
@@ -25,8 +26,9 @@ ReactDOM.render(
           <App path="/">
             <Route exact path="/" component={Home} />
             {/* <Route exact path="/project/:slug" component={ProjectDetails}/> */}
-            <Route exact path="/blog" component={AllBlogs} />
-            <Route exact path="/blog/:slug" component={BlogDetails} />
+            <Route exact path="/articles" component={AllBlogs} />
+            {/* <Route exact path="/contact" component={ContactPage} /> */}
+            {/* <Route exact path="/articles/:slug" component={BlogDetails} /> */}
           </App>
         </Switch>
         <ScrollIcon />

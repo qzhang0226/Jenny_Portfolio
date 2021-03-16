@@ -30,7 +30,7 @@ export const fetchHomeData = async (dispatch: any) => {
 };
 
 export const fetchAllBlogs = async (dispatch: any) => {
-  const WPURL = `${getWpBaseUrl()}blog`;
+  const WPURL = "https://qzhangwp.com/wp-json/wp/v2/jianing_blog";
   const blogData = await fetch(WPURL);
   const blogDataJSON = await blogData.json();
 
@@ -73,7 +73,7 @@ export const fetchProjectDetails = async (name: string, dispatch: any) => {
 };
 
 export const fetchBlogDetails = async (slug: string, dispatch: any) => {
-  const WPURL = `${getWpBaseUrl()}blog?slug=${slug}`;
+  const WPURL = `${getWpBaseUrl()}jianing_blog?slug=${slug}`;
   const data = await fetch(WPURL);
   const dataJSON = await data.json();
   return dispatch({

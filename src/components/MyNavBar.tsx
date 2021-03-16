@@ -69,7 +69,21 @@ function MyNavBar(props: IFormState) {
           <Link to="/" className="mr-4">
             Home
           </Link>
-          <Link to="/blog">Blogs</Link>
+          {/* <Link to="/education" className="mr-4">
+            Education
+          </Link> */}
+          {/* <Link to="/experience" className="mr-4">
+            Experience
+          </Link> */}
+          <Link to="/articles" className="mr-4">
+            Articles
+          </Link>
+          {/* <Link to="/extracurricular" className="mr-4">
+            Extracurricular
+          </Link> */}
+          {/* <Link to="/contact" className="mr-4">
+            Contact
+          </Link> */}
         </div>
         <div className="normal-external-links">
           <a
@@ -112,13 +126,13 @@ function MyNavBar(props: IFormState) {
             </Link>
             <Link
               id="blogLink"
-              to="/blog"
+              to="/articles"
               className={`mt-5 ${
                 activeState.active === "blogLink" ? "active" : ""
               }`}
               onClick={handleLinkClick}
             >
-              Blogs
+              Articles
             </Link>
           </div>
           <div className="mobile-external-links">

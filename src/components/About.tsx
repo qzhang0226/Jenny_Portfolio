@@ -1,5 +1,5 @@
 import * as React from "react";
-import TopBgImg from "../assets/icons/home-law-bgimg.jpg";
+import TopBgImg from "../assets/icons/1213187010.jpg";
 import { IAppProps } from "../interfaces";
 import styled from "styled-components";
 
@@ -10,7 +10,7 @@ export default function About(props: IAppProps): JSX.Element {
       <div className="image_container">
         <img src={TopBgImg} alt="about" />
         <div className="img_content">
-          <h1>Welcome to Jenny's Law Blog</h1>
+          <h1>Welcome to Jenny's Website</h1>
         </div>
       </div>
       {data ? (
