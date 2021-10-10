@@ -15,6 +15,9 @@ import { ScrollIcon } from "./components/ScrollIcon";
 import Footer from "./components/Footer";
 import MyNavBar from "./components/MyNavBar";
 import ContactPage from "./components/ContactPage";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
+import Extracurricular from "./components/Extracurricular";
 
 ReactDOM.render(
   <StoreProvider>
@@ -27,7 +30,10 @@ ReactDOM.render(
             <Route exact path="/" component={Home} />
             {/* <Route exact path="/project/:slug" component={ProjectDetails}/> */}
             <Route exact path="/articles" component={AllBlogs} />
-            {/* <Route exact path="/contact" component={ContactPage} /> */}
+            <Route exact path="/contact" component={ContactPage} />
+            <Route exact path="/education" component={Education} />
+            <Route exact path="/experience" component={Experience} />
+            <Route exact path="/extracurricular" component={Extracurricular} />
             {/* <Route exact path="/articles/:slug" component={BlogDetails} /> */}
           </App>
         </Switch>

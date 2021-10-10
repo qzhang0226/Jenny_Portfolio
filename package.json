@@ -13,7 +13,8 @@
     "@types/styled-components": "^4.1.16",
     "dotenv": "^8.0.0",
     "moment": "^2.24.0",
-    "netlify-cli": "^3.11.0",
+    "netlify-cli": "^3.39.4",
+    "pdf-viewer-reactjs": "^2.2.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-google-maps": "^9.4.5",
@@ -45,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/pdf-viewer-reactjs": "^2.2.1"
   }
 }

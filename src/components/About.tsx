@@ -13,16 +13,26 @@ export default function About(props: IAppProps): JSX.Element {
           <h1>Welcome to Jenny's Website</h1>
         </div>
       </div>
-      {data ? (
-        <div className="container">
-          <div className="col-md-8 offset-md-2">
-            <div className="header_content">{data.acf.title}</div>
-            <div className="story_content">{data.acf.content}</div>
+      <div className="container">
+        <div className="col-md-8 offset-md-2">
+          <div className="header_content">About Me</div>
+          <div className="story_content">
+            Hi, my name is Jenny and welcome to my website! I graduated from
+            Elisabeth Haub School of Law at Pace University (White Plains, New
+            York), and currently work in a law firm in midtown New York City,
+            NY, focus on M&A, corporate and SPAC areas. I fulfilled a Business
+            law – Corporate concentration from my law school, and you can read
+            my writing sample “Corporate Case Study: Smithfield Foods Inc.
+            Acquisition by Shuanghui International and its Corporate Finance
+            Strategy” for further details.
           </div>
+          <div className="story_content pt-3">
+            Please feel free to leave me a comment in my website “Contact”
+            sub-page if you have any question or would like to get in touch.
+          </div>
+          <div className="story_content pt-3">Have a great day!</div>
         </div>
-      ) : (
-        <div></div>
-      )}
+      </div>
     </CardWrapper>
   );
 }

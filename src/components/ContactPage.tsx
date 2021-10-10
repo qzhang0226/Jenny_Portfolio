@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Contact from "./Contact";
+import weChatImg from "../assets/icons/wechat.png";
 
 export default function ContactPage() {
   return (
@@ -19,6 +20,11 @@ export default function ContactPage() {
               <i className="fas fa-envelope mr-2" />
               Email: JC6175058876@gmail.com
             </div>
+            <div className="email mb-4">
+              <i className="fab fa-weixin mr-2" />
+              WeChat: cjn413328235
+              <img src={weChatImg} alt="wechat" className="weChat mr-2 mt-2" />
+            </div>
             <div className="linkedIn mb-4">
               <i className="fab fa-linkedin mr-2" />
               <a
@@ -31,7 +37,7 @@ export default function ContactPage() {
             </div>
             <div className="address">
               <i className="fas fa-home mr-2" />
-              Address: 60 Dekalb Ave, White Plains, NY 10605
+              Address: New York, NY
             </div>
           </div>
         </div>
@@ -57,5 +63,10 @@ const ContactWrapper = styled("div")`
     font-size: 2.5em;
     margin-bottom: 1em;
     font-weight: lighter;
+  }
+  .weChat {
+    width: 30%;
+    height: auto;
+    display: block;
   }
 `;

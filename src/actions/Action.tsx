@@ -1,5 +1,7 @@
 export const getBaseUrl = () => {
   var prodBaseUrl = process.env.REACT_APP_API_BASE_URL;
+  // var prodBaseUrl = "http://localhost:3002/";
+  // var prodBaseUrl = process.env.REACT_APP_API_BASE_DEV_URL;
   return prodBaseUrl;
 };
 
@@ -22,7 +24,6 @@ export const fetchHomeData = async (dispatch: any) => {
   const data = await fetch(url);
   const dataJSON = await data.json();
 
-  console.log(dataJSON);
   return dispatch({
     type: "FETCH_HOME_DATA",
     payload: dataJSON,
@@ -44,7 +45,7 @@ export const submitForm = async (formObj: object, dispatch: any) => {
   const settings = {
     method: "POST",
     headers: {
-      Accept: "application/json",
+      // Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(formObj),

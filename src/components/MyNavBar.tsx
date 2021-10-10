@@ -28,6 +28,7 @@ function MyNavBar(props: IFormState) {
     }
   }, [props.location.pathname]);
 
+  // handle active and hover effect for navbar in mobile views
   const initialStateMobile: IFormState = {
     buttonClicked: false,
   };
@@ -41,8 +42,12 @@ function MyNavBar(props: IFormState) {
   };
 
   const initialActiveState: IFormState = {
-    active: "homeLink",
+    active:
+      props.location.pathname === "/"
+        ? "homeLink"
+        : props.location.pathname.slice(1),
   };
+
   const [activeState, setActiveState] = useState(initialActiveState);
 
   const handleLinkClick = (e: any) => {
@@ -66,24 +71,66 @@ function MyNavBar(props: IFormState) {
       <Header name="Jenny Chen" className="navHeader" />
       <div className="myNav normalView">
         <div className="normal-internal-links">
-          <Link to="/" className="mr-4">
+          <Link
+            id="homeLink"
+            to="/"
+            className={`mr-4 ${
+              activeState.active === "homeLink" ? "normalViewActive" : ""
+            }`}
+            onClick={handleLinkClick}
+          >
             Home
           </Link>
-          {/* <Link to="/education" className="mr-4">
+          <Link
+            id="education"
+            to="/education"
+            className={`mr-4 ${
+              activeState.active === "education" ? "normalViewActive" : ""
+            }`}
+            onClick={handleLinkClick}
+          >
             Education
-          </Link> */}
-          {/* <Link to="/experience" className="mr-4">
+          </Link>
+          <Link
+            id="experience"
+            to="/experience"
+            className={`mr-4 ${
+              activeState.active === "experience" ? "normalViewActive" : ""
+            }`}
+            onClick={handleLinkClick}
+          >
             Experience
-          </Link> */}
-          <Link to="/articles" className="mr-4">
+          </Link>
+          <Link
+            id="articles"
+            to="/articles"
+            className={`mr-4 ${
+              activeState.active === "articles" ? "normalViewActive" : ""
+            }`}
+            onClick={handleLinkClick}
+          >
             Articles
           </Link>
-          {/* <Link to="/extracurricular" className="mr-4">
+          <Link
+            id="extracurricular"
+            to="/extracurricular"
+            className={`mr-4 ${
+              activeState.active === "extracurricular" ? "normalViewActive" : ""
+            }`}
+            onClick={handleLinkClick}
+          >
             Extracurricular
-          </Link> */}
-          {/* <Link to="/contact" className="mr-4">
+          </Link>
+          <Link
+            id="contact"
+            to="/contact"
+            className={`mr-4 ${
+              activeState.active === "contact" ? "normalViewActive" : ""
+            }`}
+            onClick={handleLinkClick}
+          >
             Contact
-          </Link> */}
+          </Link>
         </div>
         <div className="normal-external-links">
           <a
@@ -125,6 +172,26 @@ function MyNavBar(props: IFormState) {
               Home
             </Link>
             <Link
+              id="educationLink"
+              to="/education"
+              className={`mt-5 ${
+                activeState.active === "educationLink" ? "active" : ""
+              }`}
+              onClick={handleLinkClick}
+            >
+              Education
+            </Link>
+            <Link
+              id="experienceLink"
+              to="/experience"
+              className={`mt-5 ${
+                activeState.active === "experienceLink" ? "active" : ""
+              }`}
+              onClick={handleLinkClick}
+            >
+              Experience
+            </Link>
+            <Link
               id="blogLink"
               to="/articles"
               className={`mt-5 ${
@@ -133,6 +200,26 @@ function MyNavBar(props: IFormState) {
               onClick={handleLinkClick}
             >
               Articles
+            </Link>
+            <Link
+              id="extracurricularLink"
+              to="/extracurricular"
+              className={`mt-5 ${
+                activeState.active === "extracurricularLink" ? "active" : ""
+              }`}
+              onClick={handleLinkClick}
+            >
+              Extracurricular
+            </Link>
+            <Link
+              id="contactLink"
+              to="/contact"
+              className={`mt-5 ${
+                activeState.active === "contactLink" ? "active" : ""
+              }`}
+              onClick={handleLinkClick}
+            >
+              Contact
             </Link>
           </div>
           <div className="mobile-external-links">
@@ -160,6 +247,12 @@ const NavWrapper = styled("div")`
   height: 180px;
   padding: 50px 0;
   text-align: center;
+  .normalViewActive {
+    background-color: var(--mainBlue);
+  }
+  .normal-internal-links a:hover {
+    background-color: var(--mainBlue);
+  }
   .navHeader {
     height: 65px;
     font-size: 1.5rem;
@@ -280,7 +373,7 @@ const NavWrapper = styled("div")`
   }
   .mobile-external-links {
     position: absolute;
-    top: 70%;
+    top: 83%;
     left: 50%;
     transform: translate(-50%, -70%);
     -ms-transform: translate(-50%, -70%);
